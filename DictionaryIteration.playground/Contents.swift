@@ -18,7 +18,12 @@
  */
 // write your code here
 
-
+var bandAlbumDictionary = [
+    "Nirvana": "Nevermind",
+    "Blondie": "Parallel Lines",
+    "The Kinks": "Low Budget",
+    "The Beatles": "Sgt. Pepper's Lonely Hearts Club Band"
+]
 
 
 
@@ -31,7 +36,7 @@
 // write your code here
 
 
-
+bandAlbumDictionary["Pixies"] = "Doolittle"
 
 
 
@@ -43,7 +48,7 @@
 // write your code here
 
 
-
+bandAlbumDictionary["The Kinks"] = nil
 
 
 
@@ -56,9 +61,11 @@
 let bandName = "Nirvana"
 // write your code here
 
+var album = bandAlbumDictionary[bandName]
 
-
-
+if let album = album {
+    print ("\(bandName)'s top-selling album was \(album).")
+    }
 
 
 
@@ -69,7 +76,9 @@ let bandName = "Nirvana"
 // write your code here
 
 
-
+for (band, album) in bandAlbumDictionary {
+    print ("\(band)'s top-selling album was \(album)." )
+}
 
 
 
@@ -78,7 +87,7 @@ let bandName = "Nirvana"
 /*: question6
  ### 6. What type of data structure is returned when you iterate over a dictionary?
  */
-
+//Strings
 
 
 
@@ -89,13 +98,7 @@ let bandName = "Nirvana"
 /*: question7
  ### 7. Imagine every student in every grade in a high school took an exam. Each student got a letter grade based on their test results (A, B, C, D, and F). The results were averaged together per grade. How could you represent this mapping of grades to exam average?
  */
-
-
-
-
-
-
-
+var exams = [Int: String].self
 
 /*: question8
  ### 8. Create a _constant_ dictionary to store the exam results described in Question 8. This dictionary should be of type `[Int: String]`. Here are the results you can use:
@@ -107,7 +110,12 @@ let bandName = "Nirvana"
  */
 // write your code here
 
-
+let examResults = [
+    9: "B",
+    10: "A",
+    11: "C",
+    12: "D"
+]
 
 
 
@@ -119,8 +127,9 @@ let bandName = "Nirvana"
  */
 // write your code here
 
-
-
+for (grade, score) in examResults {
+print ("Grade \(grade) got \(score).")
+}
 
 
 
@@ -131,9 +140,10 @@ let bandName = "Nirvana"
  */
 // write your code here
 
-
-
-
-
-
-
+for (grade, score) in examResults {
+    if score == "A" {
+    print ("Grade \(grade) got the highest score with \(score).")
+    } else {
+     print ("Grade \(grade) got a score \(score).")
+    }
+}
